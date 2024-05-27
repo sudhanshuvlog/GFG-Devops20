@@ -7,5 +7,5 @@
 
 - Python Flask App I Used For Creating CI-CD Pipeline - https://github.com/sudhanshuvlog/PythonAppCI-CD
 
-- Deploy Microservice App Nn EKS With Jenkins - https://github.com/sudhanshuvlog/MicroservicesApp.git 
+- Deploy Microservice App On AWS EKS Cluster With Jenkins - https://github.com/sudhanshuvlog/MicroservicesApp.git 
 

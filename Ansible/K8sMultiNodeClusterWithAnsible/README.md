@@ -6,6 +6,8 @@ Configure the ansible inventory file, and ansible.cfg file with the necessary de
 *** Follow the below steps ***
 
 - Add your aws credentials in `aws_credential.yml` file.
+- ansible-galaxy collection install community.general
+- ansible-galaxy collection install community.aws
 - Change your subnet name and other details in `instance_vars.yml`
 - Run - `ansible-playbook create_instance.yml` It will create 3 EC2 instances, And it will also update the inventory file dynamically with the instance details.
 - Run - `ansible-playbook rhel_common.yaml` It will configure the k8s master and slave node with common configurations.

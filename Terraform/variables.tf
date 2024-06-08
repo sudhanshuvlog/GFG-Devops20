@@ -8,10 +8,19 @@ variable KeyName{
     default = "devopsnew20"
 }
 
-variable amiId{
-    default = "ami-00fa32593b478ad6e"
+variable sgName{
+    default = "mygfgSg"
 }
 
 variable tagName{
     default = "TerraformEc2"
+}
+
+variable "availability_zone"{
+    default = "ap-south-1a"
+}
+
+variable "sg_allowed_port"{
+    type = list
+    default = [80,8080,9090,81,82,3000]
 }

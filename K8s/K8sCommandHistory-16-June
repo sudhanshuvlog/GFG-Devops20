@@ -1,0 +1,157 @@
+root@ip-172-31-39-49 mysql]# history
+    1  yum install docker
+    2  systemctl start docker
+    3  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
+    4  rpm -Uvh minikube-latest.x86_64.rpm
+    5  minikube start --force
+    6  curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.28.3/2023-11-14/bin/linux/amd64/kubectl
+    7  chmod +x ./kubectl
+    8  cp ./kubectl /usr/bin/
+    9  cd /
+   10  kubectl get pods
+   11  clear
+   12  vi deploymentv1.yml
+   13  kubectl apply -f deploymentv1.yml 
+   14  kubectl get pods
+   15  vi service.yml
+   16  kubectl apply -f service.yml 
+   17  kubectl get svc
+   18  curl 192.168.49.2:31305
+   19  cp deploymentv1.yml deploymentv2.yml 
+   20  vi deploymentv2.yml 
+   21  kubectl apply -f deploymentv2.yml 
+   22  kubectl get pods
+   23  kubectl get pods
+   24  kubectl get pods
+   25  kubectl get pods
+   26  kubectl get pods
+   27  curl 192.168.49.2:31305
+   28  curl 192.168.49.2:31305
+   29  curl 192.168.49.2:31305
+   30  vi deploymentv1.yml 
+   31  kubectl apply -f deploymentv1.yml 
+   32  kubectl get pods
+   33  curl 192.168.49.2:31305
+   34  curl 192.168.49.2:31305
+   35  curl 192.168.49.2:31305
+   36  curl 192.168.49.2:31305
+   37  curl 192.168.49.2:31305
+   38  curl 192.168.49.2:31305
+   39  curl 192.168.49.2:31305
+   40  curl 192.168.49.2:31305
+   41  curl 192.168.49.2:31305
+   42  curl 192.168.49.2:31305
+   43  curl 192.168.49.2:31305
+   44  curl 192.168.49.2:31305
+   45  curl 192.168.49.2:31305
+   46  vi deploymentv2.yml 
+   47  vi deploymentv1.yml 
+   48  kubectl apply -f deploymentv2.yml 
+   49  kubectl apply -f deploymentv1.yml 
+   50  kubectl get pods
+   51  curl 192.168.49.2:31305
+   52  clear
+   53  mkdir auto-scaling-prac
+   54  cd auto-scaling-prac/
+   55  ls
+   56  vi deployment/yml
+   57  vi deployment.yml
+   58  kubectl apply -f deployment.yml 
+   59  kubectl get deployment
+   60  kubectl delete deployment deploymentv2
+   61  kubectl get pods
+   62  vi service.yml
+   63  cat deployment.yml 
+   64  vi service.yml
+   65  kubectl apply -f service.yml 
+   66  kubectl get svc
+   67  yum install socat -y
+   68  kubectl get svc
+   69  socat TCP4-LISTEN:80,fork,su=nobody TCP:192.168.49.2:30006 &
+   70  kubectl get pods
+   71  vi hpa.yml
+   72  vi hpa.yml
+   73  kubectl get deployment
+   74  vi hpa.yml
+   75  kubectl get pods -n kube-system
+   76  kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+   77  kubectl get pods -n kube-system
+   78  kubectl get pods
+   79  kubectl top pods
+   80  kubectl get pods -n kube-system
+   81  kubectl logs metrics-server-7ffbc6d68-29rjd -n kube-system
+   82  kubectl get pods -n kube-system
+   83  kubectl get deployment -n kube-system
+   84  kubectl edit deployment metrics-server -n kube-system
+   85  kubectl rollout restart deployment metrics-server -n kube-system
+   86  kubectl get pods -n kube-system
+   87  kubectl get pods -n kube-system
+   88  kubectl top pods
+   89  kubectl get pods
+   90  kubectl get hpa
+   91  kubectl apply -f hpa.yml 
+   92  kubectl get hpa
+   93  kubectl get pods
+   94  kubectl get pods
+   95  kubectl get pods
+   96  kubectl get pods
+   97  kubectl get pods
+   98  kubectl top pods
+   99  kubectl get pods
+  100  vi hpa.yml 
+  101  kubectl apply -f hpa.yml 
+  102  kubectl get pods
+  103  kubectl get pods
+  104  kubectl get pods
+  105  cd //
+  106  cd ..
+  107  cd /
+  108  mkdir mysql
+  109  cd mysql/
+  110  vi mysql.yml
+  111  kubectl apply -f mysql.yml 
+  112  kubectl get pods
+  113  kubectl get pods
+  114  kubectl get pods
+  115  vi service.yml
+  116  kubectl get pods
+  117  kubectl logs mysql-db-with-metrics
+  118  vi mysql.yml 
+  119  kubectl get pods
+  120  kubectl describe pod  mysql-db-with-metrics
+  121  vi mysql.yml 
+  122  kubectl apply -f mysql.yml 
+  123  kubectl get pods
+  124  kubectl get pods
+  125  kubectl get pods
+  126  kubectl get pods
+  127  kubectl delete pod  mysql-db-with-metrics
+  128  kubectl apply -f mysql.yml 
+  129  kubectl get pods
+  130  kubectl get pods
+  131  kubectl get svc
+  132  kubectl apply -f service.yml 
+  133  vi service.yml 
+  134  kubectl apply -f service.yml 
+  135  kubectl get svc
+  136  socat TCP4:LISTEN:81,fork,su=nobody TCP:192.168.49.2:31000 &
+  137  minikube ip
+  138  socat TCP4:LISTEN:82,fork,su=nobody TCP:192.168.49.2:31000 &
+  139  socat TCP4-LISTEN:82,fork,su=nobody TCP:192.168.49.2:31000 &
+  140  clear
+  141  vi prometheus.yml
+  142  docker run -d --name prometheus-container -e TZ=IST -v ./prometheus.yml:/etc/prometheus/prometheus.yml -p 9090:9090 ubuntu/prometheus:2.46.0-22.04_stable 
+  143  docker run -d --name=grafana -p 3000:3000 grafana/grafana
+  144  docker run -dit --name jenkins -p 8080:8080 jenkins/jenkins:lts-jdk17
+  145  docker ps
+  146  docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+  147  wget https://github.com/prometheus/node_exporter/releases/download/v1.7.0/node_exporter-1.7.0.linux-386.tar.gz
+  148  tar -xzvf node_exporter-1.7.0.linux-386.tar.gz
+  149  cd node_exporter-1.7.0.linux-386/
+  150  ./node_exporter &
+  151  cd ..
+  152  vi prometheus.yml 
+  153  docker ps
+  154  docker restart prometheus-container
+  155  history
+[root@ip-172-3
